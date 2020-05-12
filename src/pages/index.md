@@ -16,10 +16,8 @@ mainpitch:
     With this website, I plan to teach folks how to build a better mindset, and
     ultimately better software.
 description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  The products I build work. For examples, see: https://beta.arimiles.ca,
+  https://trainingplaces.ca, https://pepperfilters.com
 intro:
   blurbs: []
   heading: Software development services that work.
