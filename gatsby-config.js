@@ -97,7 +97,14 @@ module.exports = {
             options: {
               destinationDir: "static"
             }
-          }
+          },
+          {
+            resolve: `gatsby-plugin-gtag`,
+            options: {
+              // replace `UA-XXXXXXXXX-X` with your own Google Analytics Tracking ID
+              trackingId: `UA-74904311-3`,
+            },
+          },
         ]
       }
     },
