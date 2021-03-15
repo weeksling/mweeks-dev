@@ -5,7 +5,7 @@ date: 2020-09-27T12:51:19.426Z
 description: >-
   My daily journalling routine for focus, clarity, creativity, and health.
 featuredpost: true
-featuredimage: ./daily-journalling-article/daily_notebook.jpg
+featuredimage: .//imges/2020-10-02-my-daily-journalling-routine/daily_notebook.jpg
 tags:
   - writing
 ---
@@ -49,13 +49,13 @@ This is what I use to set my day right from the start. Ideally, shortly followin
 
 My Daily Plan in its current form, consists of 3 main sections (plus the date 🗓):
 
-![daily-journalling-article/daily_notebook.jpg](daily-journalling-article/daily_notebook.jpg)
+![/imges/2020-10-02-my-daily-journalling-routine/daily_notebook.jpg](/imges/2020-10-02-my-daily-journalling-routine/daily_notebook.jpg)
 
 ### First, my hourly schedule
 
 This is where I'll jot down any meetings I have scheduled for the day, and then record what I worked on over the day as it goes.
 
-![daily-journalling-article/daily_notebook_-_1_-_schedule.jpeg](daily-journalling-article/daily_notebook_-_1_-_schedule.jpeg)
+![/imges/2020-10-02-my-daily-journalling-routine/daily_notebook_-_1_-_schedule.jpeg](/imges/2020-10-02-my-daily-journalling-routine/daily_notebook_-_1_-_schedule.jpeg)
 
 Daily Schedule column in notebook
 
@@ -73,7 +73,7 @@ This is one task that I've decided will be my primary focus for the day. My prim
 
 The primary objective idea is loosely based off of a combination of [Getting Things Done](https://www.amazon.ca/gp/product/0143126563/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=0143126563&linkCode=as2&tag=mweeksdev-20&linkId=c4d9c464f3a192677c3a7748cd0a2472) by David Allen, [The One Thing](https://www.amazon.ca/gp/product/1885167776/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=1885167776&linkCode=as2&tag=mweeksdev-20&linkId=87d862d99ab3b38a40d6926d92772f6d) by Gary Keller, [Eat That Frog](https://www.amazon.ca/gp/product/162656941X/ref=as_li_tl?ie=UTF8&camp=15121&creative=330641&creativeASIN=162656941X&linkCode=as2&tag=mweeksdev-20&linkId=35b81d96511058ce4cab495b9df5adce) by Brian Tracy (though I've been doing this since 2016, and I read Eat That Frog in 2020, it was a great refresher), and pretty much everything else Tim Ferriss recommended on his podcast circa-2015.
 
-![daily-journalling-article/daily_notebook_-_2_-_Primary_Objective.jpeg](daily-journalling-article/daily_notebook_-_2_-_Primary_Objective.jpeg)
+![/imges/2020-10-02-my-daily-journalling-routine/daily_notebook_-_2_-_Primary_Objective.jpeg](/imges/2020-10-02-my-daily-journalling-routine/daily_notebook_-_2_-_Primary_Objective.jpeg)
 
 Primary Objective section in Daily Plan
 
@@ -87,7 +87,7 @@ Since switching to a single objective, I've found I'll regularly complete my fir
 
 This is really just a to-do list. Not much more complicated than that. Depending on what I'm working on for the day, I'll format and group these differently.
 
-![daily-journalling-article/daily_notebook_-_3_-_task_list.jpeg](daily-journalling-article/daily_notebook_-_3_-_task_list.jpeg)
+![/imges/2020-10-02-my-daily-journalling-routine/daily_notebook_-_3_-_task_list.jpeg](/imges/2020-10-02-my-daily-journalling-routine/daily_notebook_-_3_-_task_list.jpeg)
 
 Task List section in Daily Plan
 
@@ -105,7 +105,7 @@ Often-times to the the left of my morning schedule, I would include a bullet lis
 
 This is the part of my page where I think.
 
-![daily-journalling-article/daily_notebook_-_free-form.jpeg](daily-journalling-article/daily_notebook_-_free-form.jpeg)
+![/imges/2020-10-02-my-daily-journalling-routine/daily_notebook_-_free-form.jpeg](/imges/2020-10-02-my-daily-journalling-routine/daily_notebook_-_free-form.jpeg)
 
 Since today, my primary focus was just to write, I just used it to start outlining this article you are reading.
 

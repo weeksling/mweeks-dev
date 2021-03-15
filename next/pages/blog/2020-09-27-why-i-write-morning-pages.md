@@ -32,7 +32,7 @@ That's where morning pages come in. Each morning, before you get into the grind 
 
 I highly recommend reading Julia's book The Artist's Way. It serves as an excellent guide, through a 12-week program of daily journalling practices aimed at bringing you in touch with your own intuition.
 
-![./IMG_20200927_221630.jpg](./IMG_20200927_221630.jpg)
+![/images/2020-09-27-why-i-write-morning-pages/IMG_20200927_221630.jpg](/images/2020-09-27-why-i-write-morning-pages/IMG_20200927_221630.jpg)
 
 My copy of The Artist's Way
 
@@ -50,11 +50,11 @@ At first, I was going to use a Moleskine like I use for my daily schedule and re
 
 I actually loved having a nice, dedicated notebook for my morning pages, I even purchased the hardcover version to try as well.
 
-![Why%20I%20write%203%20morning%20pages%20every%20day%206cb09c918c3747bca23bcd8ee351664c/IMG_20200927_221616.jpg](Why%20I%20write%203%20morning%20pages%20every%20day%206cb09c918c3747bca23bcd8ee351664c/IMG_20200927_221616.jpg)
+![/images/2020-09-27-why-i-write-morning-pages/IMG_20200927_221616.jpg](/images/2020-09-27-why-i-write-morning-pages/IMG_20200927_221616.jpg)
 
 The Artist's Way Morning Pages Journal
 
-![Why%20I%20write%203%20morning%20pages%20every%20day%206cb09c918c3747bca23bcd8ee351664c/IMG_20200927_221644.jpg](Why%20I%20write%203%20morning%20pages%20every%20day%206cb09c918c3747bca23bcd8ee351664c/IMG_20200927_221644.jpg)
+![/images/2020-09-27-why-i-write-morning-pages/IMG_20200927_221644.jpg](/images/2020-09-27-why-i-write-morning-pages/IMG_20200927_221644.jpg)
 
 My second Morning Pages Journal
 
