@@ -1,0 +1,27 @@
+---
+templateKey: blog-post
+title: Event-driven architecture with K Native
+date: 2020-09-27T12:51:19.426Z
+description: >-
+  [DRAFT] A quick overview of event-driven architectures following the K Native docs. Can you build your own lambda service on kubernetes??
+featuredpost: false
+tags:
+  - software engineering
+  - programming
+  - architecture
+---
+
+
+
+- **Sources** are any custom resource type in Kubernetes that emits an event.
+    - How would you output an event from another container? 
+        - Would this resource watch it somehow? 
+        - Would the other service log to this resource directly somehow?
+        - Is this where a sidecar makes sense?
+- **Brokers** broadcast incoming events
+- **Triggers** serve as filter for incoming events for desired attributes before sending to sink.
+    - Do Triggers receive every single event? 
+    - Do they subscribe to certain brokers or sources?
+        - Or, is it just a matter of filtering a stream of incoming events? 
+- **Sinks** are the destination for the event. Likely where the process that reacts lives. 
+    - In a lambda clone, I guess this would be the lambda?
