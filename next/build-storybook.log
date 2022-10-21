@@ -1,0 +1,17 @@
+info @storybook/react v6.5.12
+info 
+info => Cleaning outputDir: /var/folders/qv/vq2dfmp51fd58jb7hd59m2dc0000gn/T/chromatic--35191-PDPq35weF4wq
+ERR! NestedError: Cannot copy `/Users/matthewweeks/iCloud Drive (Archive)/Desktop/Desktop/mweeks-dev/next/node_modules/@storybook/core-server/public/favicon.ico`: the file doesn't exist
+ERR!     at /Users/matthewweeks/iCloud Drive (Archive)/Desktop/Desktop/mweeks-dev/next/node_modules/cpy/index.js:96:10
+ERR!     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+ERR!     at async buildStaticStandalone (/Users/matthewweeks/iCloud Drive (Archive)/Desktop/Desktop/mweeks-dev/next/node_modules/@storybook/core-server/dist/cjs/build-static.js:104:3)
+ERR!     at async buildStatic (/Users/matthewweeks/iCloud Drive (Archive)/Desktop/Desktop/mweeks-dev/next/node_modules/@storybook/core-server/dist/cjs/build-static.js:254:5)
+ERR!  NestedError: Cannot copy `/Users/matthewweeks/iCloud Drive (Archive)/Desktop/Desktop/mweeks-dev/next/node_modules/@storybook/core-server/public/favicon.ico`: the file doesn't exist
+ERR!     at /Users/matthewweeks/iCloud Drive (Archive)/Desktop/Desktop/mweeks-dev/next/node_modules/cpy/index.js:96:10
+ERR!     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+ERR!     at async buildStaticStandalone (/Users/matthewweeks/iCloud Drive (Archive)/Desktop/Desktop/mweeks-dev/next/node_modules/@storybook/core-server/dist/cjs/build-static.js:104:3)
+ERR!     at async buildStatic (/Users/matthewweeks/iCloud Drive (Archive)/Desktop/Desktop/mweeks-dev/next/node_modules/@storybook/core-server/dist/cjs/build-static.js:254:5) {
+ERR!   nested: undefined,
+ERR!   name: 'CpyError'
+ERR! }
+info => Loading presets
