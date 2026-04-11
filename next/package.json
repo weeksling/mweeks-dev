@@ -9,16 +9,20 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^10.0.8",
+    "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^12.3.4",
     "gray-matter": "^4.0.2",
-    "next": "10.0.8",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "next": "12.3.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/node": "^14.14.34",
     "@types/react": "^17.0.3",
     "chromatic": "^6.10.4",
     "typescript": "^4.2.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
