@@ -1,8 +1,6 @@
-import fs from 'fs'
-import path from 'path'
 import Head from 'next/head'
 import Link from 'next/link'
-import matter from 'gray-matter'
+import { getAllPosts } from '../lib/posts'
 import styles from '../styles/Home.module.css'
 
 export default function Home({ posts }) {
@@ -77,40 +75,5 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const blogDir = path.join(process.cwd(), 'pages', 'blog')
-  const filenames = fs
-    .readdirSync(blogDir)
-    .filter((name) => name.endsWith('.md'))
-
-  const posts = filenames
-    .map((filename) => {
-      const filePath = path.join(blogDir, filename)
-      const raw = fs.readFileSync(filePath, 'utf8')
-      const { data } = matter(raw)
-      const slug = filename.replace(/\.md$/, '')
-      const dateValue = data.date ? new Date(data.date) : null
-      const date = dateValue ? dateValue.toISOString() : null
-      const formattedDate = dateValue
-        ? dateValue.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })
-        : ''
-
-      return {
-        slug,
-        title: data.title || slug,
-        description: data.description || '',
-        date,
-        formattedDate,
-      }
-    })
-    .sort((a, b) => {
-      if (!a.date) return 1
-      if (!b.date) return -1
-      return a.date < b.date ? 1 : -1
-    })
-
-  return { props: { posts } }
+  return { props: { posts: getAllPosts() } }
 }

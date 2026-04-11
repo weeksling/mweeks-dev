@@ -1,52 +1,69 @@
-import fs from "fs";
-import matter from "gray-matter";
+import Head from 'next/head'
+import Link from 'next/link'
+import { getAllPosts } from '../../lib/posts'
+import styles from '../../styles/Home.module.css'
 
-export default function Home({ posts }) {
+type PostSummary = {
+  slug: string
+  title: string
+  description: string
+  date: string | null
+  formattedDate: string
+}
+
+export default function BlogIndex({ posts }: { posts: PostSummary[] }) {
   return (
-    <div>
-       {posts.map(({ frontmatter: { title, description, date } }) => (
-        <article key={title}>
-          <header>
-            <h3>{title}</h3>
-            <span>{date}</span>
-          </header>
-          <section>
-            <p>{description}</p>
-          </section>
-        </article>
-      ))}
+    <div className={styles.container}>
+      <Head>
+        <title>Writing · Matt Weeks</title>
+        <meta
+          name="description"
+          content="Essays on writing, habits, code, and running — by Matt Weeks."
+        />
+      </Head>
+
+      <main className={styles.main}>
+        <header className={styles.hero}>
+          <Link href="/">
+            <a className={styles.link}>← Home</a>
+          </Link>
+          <h1 className={styles.title} style={{ marginTop: '1.5rem' }}>
+            Writing
+          </h1>
+          <p className={styles.tagline}>
+            Essays from 2020–2023 on habits, tools, and the things I was trying
+            to figure out.
+          </p>
+        </header>
+
+        <section className={styles.section}>
+          <ul className={styles.postList}>
+            {posts.map((post) => (
+              <li key={post.slug} className={styles.postItem}>
+                <Link href={`/blog/${post.slug}`}>
+                  <a className={styles.postLink}>
+                    <time className={styles.postDate} dateTime={post.date ?? undefined}>
+                      {post.formattedDate}
+                    </time>
+                    <h2 className={styles.postTitle}>{post.title}</h2>
+                    {post.description ? (
+                      <p className={styles.postDescription}>{post.description}</p>
+                    ) : null}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
+
+      <footer className={styles.footer}>
+        <p>© {new Date().getFullYear()} Matt Weeks</p>
+      </footer>
     </div>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(`${process.cwd()}/content/posts`);
-
-  const posts = files.map((filename) => {
-    const markdownWithMetadata = fs
-      .readFileSync(`content/posts/${filename}`)
-      .toString();
-
-    const { data } = matter(markdownWithMetadata);
-
-    // Convert post date to format: Month day, Year
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    const formattedDate = data.date.toLocaleDateString("en-US", options);
-
-    const frontmatter = {
-      ...data,
-      date: formattedDate,
-    };
-
-    return {
-      slug: filename.replace(".md", ""),
-      frontmatter,
-    };
-  });
-
-  return {
-    props: {
-      posts,
-    },
-  };
+  return { props: { posts: getAllPosts() } }
 }
