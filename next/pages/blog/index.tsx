@@ -24,9 +24,7 @@ export default function BlogIndex({ posts }: { posts: PostSummary[] }) {
 
       <main className={styles.main}>
         <header className={styles.hero}>
-          <Link href="/">
-            <a className={styles.link}>← Home</a>
-          </Link>
+          <Link href="/" className={styles.link}>← Home</Link>
           <h1 className={styles.title} style={{ marginTop: '1.5rem' }}>
             Writing
           </h1>
@@ -40,16 +38,14 @@ export default function BlogIndex({ posts }: { posts: PostSummary[] }) {
           <ul className={styles.postList}>
             {posts.map((post) => (
               <li key={post.slug} className={styles.postItem}>
-                <Link href={`/blog/${post.slug}`}>
-                  <a className={styles.postLink}>
-                    <time className={styles.postDate} dateTime={post.date ?? undefined}>
-                      {post.formattedDate}
-                    </time>
-                    <h2 className={styles.postTitle}>{post.title}</h2>
-                    {post.description ? (
-                      <p className={styles.postDescription}>{post.description}</p>
-                    ) : null}
-                  </a>
+                <Link href={`/blog/${post.slug}`} className={styles.postLink}>
+                  <time className={styles.postDate} dateTime={post.date ?? undefined}>
+                    {post.formattedDate}
+                  </time>
+                  <h2 className={styles.postTitle}>{post.title}</h2>
+                  {post.description ? (
+                    <p className={styles.postDescription}>{post.description}</p>
+                  ) : null}
                 </Link>
               </li>
             ))}
