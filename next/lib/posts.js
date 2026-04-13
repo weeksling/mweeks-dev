@@ -2,6 +2,9 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
+const POST_EXTENSION_REGEX = /\.(md|mdx)$/
+const POST_EXTENSIONS = ['.md', '.mdx']
+
 // The content directory lives at the repo root so it can be shared
 // between the Next site, the Gatsby site, and any git-based CMS.
 // On Vercel, process.cwd() is the Next project root (next/), so the
@@ -20,8 +23,16 @@ export function getPostsDir() {
   )
 }
 
+function isPostFilename(filename) {
+  return POST_EXTENSION_REGEX.test(filename)
+}
+
+function stripPostExtension(filename) {
+  return filename.replace(POST_EXTENSION_REGEX, '')
+}
+
 function toPostMeta(filename, data) {
-  const slug = filename.replace(/\.md$/, '')
+  const slug = stripPostExtension(filename)
   const dateValue = data.date ? new Date(data.date) : null
   const date = dateValue ? dateValue.toISOString() : null
   const formattedDate = dateValue
@@ -44,7 +55,7 @@ function toPostMeta(filename, data) {
 
 export function getAllPosts() {
   const dir = getPostsDir()
-  const filenames = fs.readdirSync(dir).filter((f) => f.endsWith('.md'))
+  const filenames = fs.readdirSync(dir).filter(isPostFilename)
 
   const posts = filenames.map((filename) => {
     const raw = fs.readFileSync(path.join(dir, filename), 'utf8')
@@ -65,17 +76,22 @@ export function getAllSlugs() {
   const dir = getPostsDir()
   return fs
     .readdirSync(dir)
-    .filter((f) => f.endsWith('.md'))
-    .map((f) => f.replace(/\.md$/, ''))
+    .filter(isPostFilename)
+    .map(stripPostExtension)
 }
 
 export function getPostBySlug(slug) {
   const dir = getPostsDir()
-  const filePath = path.join(dir, `${slug}.md`)
+  const filePath = POST_EXTENSIONS.map((ext) => path.join(dir, `${slug}${ext}`)).find(
+    (candidatePath) => fs.existsSync(candidatePath)
+  )
+  if (!filePath) {
+    throw new Error(`Post not found for slug "${slug}"`)
+  }
   const raw = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(raw)
   return {
     content,
-    frontmatter: toPostMeta(`${slug}.md`, data),
+    frontmatter: toPostMeta(path.basename(filePath), data),
   }
 }
