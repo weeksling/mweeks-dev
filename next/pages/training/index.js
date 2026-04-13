@@ -1,6 +1,6 @@
 export default function Home() {
     return (
-        <div className= { styles.container } >
+        <div>
             <section>
                 <h1>Strava</h1>
                 <p>

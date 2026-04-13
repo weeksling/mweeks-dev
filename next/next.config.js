@@ -1,7 +1,6 @@
-// next.config.js
-const withMDX = require('@next/mdx')({
-    extension: /\.(md|mdx)$/,
-})
-module.exports = withMDX({
-    pageExtensions: ['js', 'jsx', 'mdx', 'md'],
-})
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  transpilePackages: ['@keystatic/core', '@keystatic/next'],
+}
+module.exports = nextConfig
