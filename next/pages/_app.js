@@ -1,16 +1,14 @@
-// import '../styles/globals.css'
-import '../styles/reset.css';
-// import '../components/all.scss'
-// src/App.js
-import React from 'react'
-import {MDXProvider} from '@mdx-js/react'
-
-
-const components = {}
+import '../styles/reset.css'
+import '../styles/globals.css'
+import ThemeToggle from '../components/ThemeToggle'
 
 function MyApp({ Component, pageProps }) {
-  return <MDXProvider components={components}><Component {...pageProps} /></MDXProvider>
-  
+  return (
+    <>
+      <ThemeToggle />
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp
