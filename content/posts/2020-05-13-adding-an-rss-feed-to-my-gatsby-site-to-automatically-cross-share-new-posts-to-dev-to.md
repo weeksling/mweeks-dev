@@ -106,7 +106,7 @@ In my case, I simply `git commit`, do a `git push` and watch Netlify deploy it!
 
 # How to share your feed automatically on Dev.to
 
-You'll want to head over to <https://dev.to/settings/publishing-from-rss> and enter in your fancy new RSS feed URL, and just watch the magic happen!
+You'll want to head over to [dev.to/settings/publishing-from-rss](https://dev.to/settings/publishing-from-rss) and enter in your fancy new RSS feed URL, and just watch the magic happen!
 
 ![Dev TO Settings Page Publishing from RSS](/img/devto-settings-rss.png)
 

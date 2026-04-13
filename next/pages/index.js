@@ -1,65 +1,79 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import { getAllPosts } from '../lib/posts'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Matt Weeks</title>
+        <meta
+          name="description"
+          content="Notes on writing, habits, code, and running — by Matt Weeks."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <header className={styles.hero}>
+          <h1 className={styles.title}>Matt Weeks</h1>
+          <p className={styles.tagline}>
+            Notes on writing, habits, code, and running.
+          </p>
+        </header>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Writing</h2>
+          <ul className={styles.postList}>
+            {posts.map((post) => (
+              <li key={post.slug} className={styles.postItem}>
+                <Link href={`/blog/${post.slug}`}>
+                  <a className={styles.postLink}>
+                    <time className={styles.postDate} dateTime={post.date}>
+                      {post.formattedDate}
+                    </time>
+                    <h3 className={styles.postTitle}>{post.title}</h3>
+                    {post.description ? (
+                      <p className={styles.postDescription}>{post.description}</p>
+                    ) : null}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Elsewhere</h2>
+          <ul className={styles.linkList}>
+            <li>
+              <Link href="/training">
+                <a className={styles.link}>Training</a>
+              </Link>
+              <span className={styles.linkNote}>— marathon prep &amp; Strava feed</span>
+            </li>
+            <li>
+              <a
+                className={styles.link}
+                href="https://github.com/weeksling"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </section>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+        <p>© {new Date().getFullYear()} Matt Weeks</p>
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  return { props: { posts: getAllPosts() } }
 }
