@@ -28,8 +28,7 @@ export default function Home({ posts }) {
           <ul className={styles.postList}>
             {posts.map((post) => (
               <li key={post.slug} className={styles.postItem}>
-                <Link href={`/blog/${post.slug}`}>
-                  <a className={styles.postLink}>
+                <Link href={`/blog/${post.slug}`} className={styles.postLink}>
                     <time className={styles.postDate} dateTime={post.date}>
                       {post.formattedDate}
                     </time>
@@ -37,7 +36,6 @@ export default function Home({ posts }) {
                     {post.description ? (
                       <p className={styles.postDescription}>{post.description}</p>
                     ) : null}
-                  </a>
                 </Link>
               </li>
             ))}
@@ -48,9 +46,7 @@ export default function Home({ posts }) {
           <h2 className={styles.sectionTitle}>Elsewhere</h2>
           <ul className={styles.linkList}>
             <li>
-              <Link href="/training">
-                <a className={styles.link}>Training</a>
-              </Link>
+              <Link href="/training" className={styles.link}>Training</Link>
               <span className={styles.linkNote}>— marathon prep &amp; Strava feed</span>
             </li>
             <li>

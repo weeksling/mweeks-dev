@@ -19,9 +19,7 @@ export default function Post({ source, frontmatter }) {
 
       <main className={styles.main}>
         <nav className={postStyles.nav}>
-          <Link href="/">
-            <a className={styles.link}>← Home</a>
-          </Link>
+          <Link href="/" className={styles.link}>← Home</Link>
         </nav>
 
         <article className={postStyles.article}>
