@@ -13,7 +13,6 @@ tags:
   - blogging
   - gatsby
 ---
-![]()
 
 Gatsby's plugin system makes adding and extending functionality SUPER easy. Today I set up an RSS feed for my blog, so that new posts can be automatically distributed to Dev.TO and Medium, in about twenty minutes. 
 
