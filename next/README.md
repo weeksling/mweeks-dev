@@ -42,3 +42,9 @@ The site moved here from Gatsby (`../gatsby`). The URLs Google indexed must keep
 ```bash
 node scripts/check-legacy-urls.mjs http://localhost:3000
 ```
+
+## Node version
+
+`engines` pins Node `24.x`. Next 12 crashes on Node 25+ (its bundled `jsonwebtoken` uses the
+removed `buffer.SlowBuffer`), and Vercel builds an open-ended range like `>=18` on its newest
+Node. Lift the pin when Next is upgraded.
