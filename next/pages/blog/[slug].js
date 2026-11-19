@@ -4,6 +4,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import remarkGfm from 'remark-gfm'
 import { getAllSlugs, getPostBySlug } from '../../lib/posts'
+import { tagSlug } from '../../lib/site'
 import styles from '../../styles/Home.module.css'
 import postStyles from '../../styles/Post.module.css'
 
@@ -32,11 +33,29 @@ export default function Post({ source, frontmatter }) {
               </time>
             ) : null}
             <h1 className={postStyles.title}>{frontmatter.title}</h1>
+            {frontmatter.description ? (
+              <p className={styles.tagline}>{frontmatter.description}</p>
+            ) : null}
           </header>
 
           <div className={postStyles.body}>
             <MDXRemote {...source} />
           </div>
+
+          {frontmatter.tags.length ? (
+            <footer className={styles.section}>
+              <h2 className={styles.sectionTitle}>Tags</h2>
+              <ul className={styles.linkList}>
+                {frontmatter.tags.map((tag) => (
+                  <li key={tag}>
+                    <Link href={`/tags/${tagSlug(tag)}`}>
+                      <a className={styles.link}>{tag}</a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </footer>
+          ) : null}
         </article>
       </main>
 

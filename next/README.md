@@ -32,3 +32,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Legacy URLs
+
+The site moved here from Gatsby (`../gatsby`). The URLs Google indexed must keep working:
+`trailingSlash` in `next.config.js`, the `/tags/` pages, and `/blog/rss.xml` (written by
+`scripts/generate-feeds.mjs` during `yarn build`) all exist for that. To check a running site:
+
+```bash
+node scripts/check-legacy-urls.mjs http://localhost:3000
+```

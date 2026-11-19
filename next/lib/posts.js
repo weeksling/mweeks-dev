@@ -1,6 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+// explicit .js: scripts/generate-feeds.mjs loads this file with plain Node
+import { tagSlug } from './site.js'
 
 // The content directory lives at the repo root so it can be shared
 // between the Next site, the Gatsby site, and any git-based CMS.
@@ -59,6 +61,18 @@ export function getAllPosts() {
   })
 
   return posts
+}
+
+export function getAllTags() {
+  const bySlug = {}
+  for (const post of getAllPosts()) {
+    for (const tag of post.tags) {
+      const slug = tagSlug(tag)
+      bySlug[slug] = bySlug[slug] || { tag, slug, posts: [] }
+      bySlug[slug].posts.push(post)
+    }
+  }
+  return Object.values(bySlug).sort((a, b) => a.slug.localeCompare(b.slug))
 }
 
 export function getAllSlugs() {
